@@ -73,7 +73,6 @@ func main() {
 	if commandData == nil {
 		return
 	}
-	defer commandData.CloseKeystore()
 
 	// Run desired command
 	runCommand(parsed, commandData)

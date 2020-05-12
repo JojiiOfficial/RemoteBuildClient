@@ -20,5 +20,5 @@ func buildCData(parsed string, appTrimName int) *commands.CommandData {
 	}
 
 	// Initialize encryption sources
-	return true
+	return &commandData
 }
