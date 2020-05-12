@@ -21,5 +21,8 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 
 	case aurBuild.FullCommand():
 		commandData.CreateAURJob(*aurbuildPackage, *jobUploadTo)
+
+	case jobCancelCmd.FullCommand():
+		commandData.CancelJob(*jobCancelID)
 	}
 }

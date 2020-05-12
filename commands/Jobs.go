@@ -51,6 +51,16 @@ func (cData *CommandData) ListJobs() {
 	fmt.Println(table)
 }
 
+// CancelJob cancel a job
+func (cData *CommandData) CancelJob(jobID uint) {
+	if err := cData.Librb.CancelJob(jobID); err != nil {
+		printResponseError(err, "canceling job")
+		return
+	}
+
+	printSuccess("%s %d", "cancelling job", jobID)
+}
+
 // CreateAURJob create an aur build job
 func (cData *CommandData) CreateAURJob(pkg, sUploadType string) {
 	uploadtype := librb.ParseUploadType(sUploadType)

@@ -71,6 +71,10 @@ var (
 	// -- New AUR job
 	aurBuild        = newJobCmd.Command("aurbuild", "Build an AUR package")
 	aurbuildPackage = aurBuild.Arg("Package", "The AUR package to build").Required().String()
+
+	// Cancel job
+	jobCancelCmd = job.Command("cancel", "Cancel a job")
+	jobCancelID  = jobCancelCmd.Arg("JobID", "ID of job to cancel").Required().Uint()
 )
 
 var (
