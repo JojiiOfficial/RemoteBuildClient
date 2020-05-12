@@ -2,13 +2,10 @@ package commands
 
 import (
 	"bufio"
-	"crypto/tls"
 	"encoding/base64"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"log"
-	"net/http"
 	"net/url"
 	"os"
 
@@ -18,9 +15,6 @@ import (
 	"github.com/JojiiOfficial/gaw"
 	"github.com/fatih/color"
 )
-
-// UseTargets targets for config use
-var UseTargets = []string{"namespace", "tags", "groups"}
 
 // ConfigView view config
 func ConfigView(cData *CommandData, sessionBase64 bool) {
@@ -59,7 +53,7 @@ func ConfigView(cData *CommandData, sessionBase64 bool) {
 }
 
 // SetupClient sets up client config
-func SetupClient(cData *CommandData, host, configFile string, ignoreCert, serverOnly, register, noLogin bool, token, username string) {
+func (cData *CommandData) SetupClient(host, configFile string, ignoreCert, serverOnly, register, noLogin bool, token, username string) {
 	if len(token)*len(username) == 0 && len(token)+len(username) > 0 {
 		fmt.Println("Either --user or --token is missing")
 		return
@@ -112,7 +106,7 @@ func SetupClient(cData *CommandData, host, configFile string, ignoreCert, server
 	// ignore token error since user might not
 	// be logged in after setup process
 	config, _ := cData.Config.ToRequestConfig()
-	cData.LibDM = librb.NewLibRB(config)
+	cData.Librb = librb.NewLibRB(config)
 
 	// Insert user directly if token and user is set
 	if len(token) > 0 && len(username) > 0 {
@@ -137,13 +131,13 @@ func SetupClient(cData *CommandData, host, configFile string, ignoreCert, server
 	// if not noLogin, login
 	if !noLogin {
 		fmt.Println("Login")
-		LoginCommand(cData, "")
+		cData.LoginCommand("")
 		return
 	}
 
 	if register {
 		fmt.Println("Create an account")
-		RegisterCommand(cData)
+		cData.RegisterCommand()
 	}
 }
 
@@ -166,22 +160,15 @@ func bulidURL(host string) *url.URL {
 }
 
 func checkHost(host string, ignoreCert bool) error {
-	client := http.Client{
-		Transport: &http.Transport{
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: ignoreCert,
-			},
-		},
-	}
+	rb := librb.NewLibRB(&librb.RequestConfig{
+		IgnoreCert: ignoreCert,
+		URL:        host,
+	})
 
-	resp, err := client.Get(host)
+	_, err := rb.Ping()
 	if err != nil {
 		return err
 	}
-	resp.Body.Close()
 
-	if resp.StatusCode != 200 {
-		return errors.New("Invalid responsecode")
-	}
 	return nil
 }

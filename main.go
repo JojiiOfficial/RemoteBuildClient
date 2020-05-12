@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	librb "github.com/JojiiOfficial/LibRemotebuild"
 	dmConfig "github.com/JojiiOfficial/LibRemotebuild/config"
 	"github.com/JojiiOfficial/gaw"
 
@@ -12,14 +13,14 @@ import (
 )
 
 const (
-	appName = "manager"
+	appName = "rbuild"
 	version = "1.0.0"
 )
 
 // ...
 const (
 	// EnVarPrefix prefix for env vars
-	EnVarPrefix = "MANAGER"
+	EnVarPrefix = "RBUILD"
 
 	// EnVarPrefix prefix of all used env vars
 	EnVarLogLevel   = "LOG_LEVEL"
@@ -35,7 +36,7 @@ func getEnVar(name string) string {
 
 // App commands
 var (
-	app = kingpin.New(appName, "A DataManager")
+	app = kingpin.New(appName, "A Remote build client")
 
 	// Global flags
 	appYes     = app.Flag("yes", "Skip confirmations").Short('y').Bool()
@@ -44,7 +45,32 @@ var (
 	// File related flags
 	appForce = app.Flag("force", "Forces an action").Short('f').Bool()
 
-	setupCmd = app.Command("setup", "Setup the connection to the server")
+	setupCmd           = app.Command("setup", "Setup the connection to the server")
+	setupCmdHost       = setupCmd.Arg("host", "The host").Required().String()
+	setupCmdIgnoreCert = setupCmd.Flag("ignore-cert", "Ignore invalid SSL/TLS certs").Bool()
+	setupCmdServerOnly = setupCmd.Flag("server-only", "Setup the server only").Bool()
+	setupCmdRegister   = setupCmd.Flag("register", "Create an account").Bool()
+	setupCmdLogin      = setupCmd.Flag("login", "Login into an existing account").Bool()
+	setupCmdToken      = setupCmd.Flag("token", "Use an existing sessiontoken to setup a connection").String()
+	setupCmdUser       = setupCmd.Flag("username", "Required if --token is used").String()
+
+	// User commands
+	loginCmd    = app.Command("login", "Login into an existing account")
+	registerCmd = app.Command("register", "Create a new account")
+
+	jobs = app.Command("jobs", "List active jobs")
+
+	// Job commands
+	job = app.Command("job", "Job actions")
+
+	// New jobs
+	newJobCmd = job.Command("create", "Create a new job")
+
+	jobUploadTo = app.Flag("uploadTo", "Upload compiled file").HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
+
+	// -- New AUR job
+	aurBuild        = newJobCmd.Command("aurbuild", "Build an AUR package")
+	aurbuildPackage = aurBuild.Arg("Package", "The AUR package to build").Required().String()
 )
 
 var (

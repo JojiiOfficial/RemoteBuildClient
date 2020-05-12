@@ -10,7 +10,7 @@ import (
 
 // CommandData data for commands
 type CommandData struct {
-	LibDM   *librb.LibRB
+	Librb   *librb.LibRB
 	Command string
 	Config  *dmConfig.Config
 
@@ -35,7 +35,7 @@ func (cData *CommandData) Init() bool {
 	}
 
 	// Create new dmanager lib object
-	cData.LibDM = librb.NewLibRB(config)
+	cData.Librb = librb.NewLibRB(config)
 
 	// return success
 	return true

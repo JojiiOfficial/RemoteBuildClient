@@ -17,7 +17,7 @@ import (
 )
 
 // LoginCommand login into the server
-func LoginCommand(cData *CommandData, usernameArg string, args ...bool) {
+func (cData *CommandData) LoginCommand(usernameArg string, args ...bool) {
 	// Print confirmation if user is already logged in
 	if cData.Config.IsLoggedIn() && !cData.Yes && len(args) == 0 {
 		i, _ := gaw.ConfirmInput("You are already logged in. Overwrite session? [y/n]> ", bufio.NewReader(os.Stdin))
@@ -30,7 +30,7 @@ func LoginCommand(cData *CommandData, usernameArg string, args ...bool) {
 	username, pass := credentials(usernameArg, false, 0)
 
 	// Do HTTP request
-	loginResponse, err := cData.LibDM.Login(username, pass)
+	loginResponse, err := cData.Librb.Login(username, pass)
 	if err != nil {
 		printResponseError(err, "logging in")
 		return
@@ -49,7 +49,7 @@ func LoginCommand(cData *CommandData, usernameArg string, args ...bool) {
 }
 
 // RegisterCommand create a new account
-func RegisterCommand(cData *CommandData) {
+func (cData *CommandData) RegisterCommand() {
 	// Input for credentials
 	username, pass := credentials("", true, 0)
 	if len(username) == 0 || len(pass) == 0 {
@@ -57,7 +57,7 @@ func RegisterCommand(cData *CommandData) {
 	}
 
 	// Do HTTP request
-	_, err := cData.LibDM.Register(username, pass)
+	_, err := cData.Librb.Register(username, pass)
 	if err != nil {
 		printResponseError(err, "creating an account")
 		return
@@ -68,7 +68,7 @@ func RegisterCommand(cData *CommandData) {
 	// Ask for login
 	y, _ := gaw.ConfirmInput("Do you want to login to this account? [y/n]> ", bufio.NewReader(os.Stdin))
 	if y {
-		LoginCommand(cData, username, true)
+		cData.LoginCommand(username, true)
 	}
 }
 
@@ -143,7 +143,7 @@ func credentials(bUser string, repeat bool, index uint8) (string, string) {
 
 // Ping pings the server
 func Ping(cData *CommandData) {
-	pingResp, err := cData.LibDM.Ping()
+	pingResp, err := cData.Librb.Ping()
 	if err != nil {
 		printError("while pinging", err.Error())
 		return
