@@ -26,6 +26,8 @@ github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512223431-08b89c7682a
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512223431-08b89c7682ae/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512232904-a869d3c50b61 h1:0ba1NPon3HCgb2sfwEL+n2+jyxYdIIfdpWBowM5nbnU=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512232904-a869d3c50b61/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200513211701-7e3585c240b1 h1:8DHRBen5w8RUsQusclMtRDJRRbUrneH5iyVIAr8d9KI=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200513211701-7e3585c240b1/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28 h1:nYoIExG+Z/gSLS9Jbpu6lnrh+m6e9gTxQfGhanTsExE=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28/go.mod h1:j1kHFoYWAbLRPE5nyAAtODwUc0xwd2+ifPZ3uCAgv/g=
 github.com/JojiiOfficial/gaw v1.2.0/go.mod h1:Y0hrpN0iX0L5bBf/8+kIER7R/m4GTNuKkifXisMG4S4=
@@ -43,6 +45,8 @@ github.com/danieljoos/wincred v1.0.2 h1:zf4bhty2iLuwgjgpraD2E9UbvO+fe54XXGJbOwe2
 github.com/danieljoos/wincred v1.0.2/go.mod h1:SnuYRW9lp1oJrZX/dXJqr0cPK5gYXqx3EJbmjhLdK9U=
 github.com/danieljoos/wincred v1.0.3 h1:/edfLpDNU3Fhy+yS2mJvZvtVLqzoCvtqT804PjAKgHQ=
 github.com/danieljoos/wincred v1.0.3/go.mod h1:SnuYRW9lp1oJrZX/dXJqr0cPK5gYXqx3EJbmjhLdK9U=
+github.com/danieljoos/wincred v1.1.0 h1:3RNcEpBg4IhIChZdFRSdlQt1QjCp1sMAPIrOnm7Yf8g=
+github.com/danieljoos/wincred v1.1.0/go.mod h1:XYlo+eRTsVA9aHGp7NGjFkPla4m+DCL7hqDjlFjiygg=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/denisbrodbeck/machineid v1.0.1 h1:geKr9qtkB876mXguW2X6TU4ZynleN6ezuMSRhl4D7AQ=
@@ -94,6 +98,7 @@ github.com/stretchr/objx v0.1.0 h1:4G4v2dO3VZwixGIRoQ5Lfboy6nUhCyYzaqnIAPPhYs4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/zalando/go-keyring v0.0.0-20200121091418-667557018717 h1:3M/uUZajYn/082wzUajekePxpUAZhMTfXvI9R+26SJ0=
 github.com/zalando/go-keyring v0.0.0-20200121091418-667557018717/go.mod h1:RaxNwUITJaHVdQ0VC7pELPZ3tOWn13nr0gZMZEhpVU0=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=

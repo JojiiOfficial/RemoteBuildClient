@@ -10,6 +10,7 @@ import (
 	dmConfig "github.com/DataManager-Go/libdatamanager/config"
 	librb "github.com/JojiiOfficial/LibRemotebuild"
 	"github.com/fatih/color"
+	humanTime "github.com/sbani/go-humanizer/time"
 	clitable "gopkg.in/benweidig/cli-table.v2"
 )
 
@@ -44,7 +45,12 @@ func (cData *CommandData) ListJobs() {
 			job.Position,
 			job.BuildType,
 			job.UploadType,
-			job.Status,
+		}
+
+		if job.Status == librb.JobRunning {
+			rowitems = append(rowitems, "Started "+humanTime.Difference(time.Now(), job.RunningSince))
+		} else {
+			rowitems = append(rowitems, job.Status)
 		}
 
 		table.AddRow(rowitems...)
