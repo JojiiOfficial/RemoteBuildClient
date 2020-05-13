@@ -18,10 +18,14 @@ github.com/JojiiOfficial/LibRemotebuild v0.0.4 h1:cMORzF19S++ukmzpXRwwXVmT5FBUCH
 github.com/JojiiOfficial/LibRemotebuild v0.0.4/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild v0.0.6 h1:fOk+RF78XDBV96Oil5JA+KZLaFkbHBS4FXwpqpL6F6A=
 github.com/JojiiOfficial/LibRemotebuild v0.0.6/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
+github.com/JojiiOfficial/LibRemotebuild v0.0.8 h1:8EQpJ0SslOJanscz4hLL+tRDEo+eH77Gs1s9q49JmzE=
+github.com/JojiiOfficial/LibRemotebuild v0.0.8/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512212457-3bff7ed5eb32 h1:KERkssPvY6PIRjZw7Abv5mkhDXeRixBgCoSboBtiMrA=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512212457-3bff7ed5eb32/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512223431-08b89c7682ae h1:EGcuJbDRaM9RcdrDzP88VhiQbZdC7rJPuBTSA8nVfLQ=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512223431-08b89c7682ae/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512232904-a869d3c50b61 h1:0ba1NPon3HCgb2sfwEL+n2+jyxYdIIfdpWBowM5nbnU=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512232904-a869d3c50b61/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28 h1:nYoIExG+Z/gSLS9Jbpu6lnrh+m6e9gTxQfGhanTsExE=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28/go.mod h1:j1kHFoYWAbLRPE5nyAAtODwUc0xwd2+ifPZ3uCAgv/g=
 github.com/JojiiOfficial/gaw v1.2.0/go.mod h1:Y0hrpN0iX0L5bBf/8+kIER7R/m4GTNuKkifXisMG4S4=
@@ -113,6 +117,8 @@ golang.org/x/sys v0.0.0-20200413165638-669c56c373c4 h1:opSr2sbRXk5X5/givKrrKj9HX
 golang.org/x/sys v0.0.0-20200413165638-669c56c373c4/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200511232937-7e40ca221e25 h1:OKbAoGs4fGM5cPLlVQLZGYkFC8OnOfgo6tt0Smf9XhM=
 golang.org/x/sys v0.0.0-20200511232937-7e40ca221e25/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200513112337-417ce2331b5c h1:kISX68E8gSkNYAFRFiDU8rl5RIn1sJYKYb/r2vMLDrU=
+golang.org/x/sys v0.0.0-20200513112337-417ce2331b5c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 google.golang.org/appengine v1.4.0/go.mod h1:xpcJRLb0r/rnEns0DIKYYv+WjYCduHsrkT7/EB5XEv4=
 gopkg.in/alecthomas/kingpin.v2 v2.2.6 h1:jMFz6MfLP0/4fUyZle81rXUoxOBFi19VUFKVDOQfozc=

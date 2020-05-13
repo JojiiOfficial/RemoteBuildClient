@@ -3,6 +3,9 @@ package commands
 import (
 	"encoding/base64"
 	"fmt"
+	"io"
+	"os"
+	"time"
 
 	dmConfig "github.com/DataManager-Go/libdatamanager/config"
 	librb "github.com/JojiiOfficial/LibRemotebuild"
@@ -96,6 +99,34 @@ func (cData *CommandData) CreateAURJob(pkg, sUploadType string) {
 	}
 
 	printSuccess("created job with ID: %d at Pos %d", resp.ID, resp.Position)
+}
+
+var lastLog time.Time
+
+// Logs of job
+func (cData *CommandData) Logs(jobID uint, since time.Time) {
+	starttime := since
+
+	if !lastLog.IsZero() {
+		starttime = lastLog
+		lastLog = time.Now()
+	}
+
+	logStream, err := cData.Librb.Logs(jobID, starttime)
+	if err != nil {
+		printResponseError(err, "retrieving logs")
+		return
+	}
+
+	_, err = io.Copy(os.Stdout, logStream)
+	if err != nil && err != io.EOF {
+		fmt.Println("ERR:", err)
+		return
+	}
+
+	time.Sleep(300 * time.Millisecond)
+
+	cData.Logs(jobID, lastLog)
 }
 
 // Load and init config. Return false on error

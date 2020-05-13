@@ -75,6 +75,10 @@ var (
 	// Cancel job
 	jobCancelCmd = job.Command("cancel", "Cancel a job")
 	jobCancelID  = jobCancelCmd.Arg("JobID", "ID of job to cancel").Required().Uint()
+
+	// Job logs
+	jobLogsCmd = job.Command("logs", "View logs of job")
+	jobLogsID  = jobLogsCmd.Arg("JobID", "ID of job to retrieve the logs from").Required().Uint()
 )
 
 var (
