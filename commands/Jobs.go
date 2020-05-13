@@ -107,32 +107,28 @@ func (cData *CommandData) CreateAURJob(pkg, sUploadType string) {
 	printSuccess("created job with ID: %d at Pos %d", resp.ID, resp.Position)
 }
 
-var lastLog time.Time
-
 // Logs of job
 func (cData *CommandData) Logs(jobID uint, since time.Time) {
-	starttime := since
+	start := time.Now()
 
-	if !lastLog.IsZero() {
-		starttime = lastLog
-		lastLog = time.Now()
-	}
-
-	logStream, err := cData.Librb.Logs(jobID, starttime)
+	logStream, err := cData.Librb.Logs(jobID, since)
 	if err != nil {
 		printResponseError(err, "retrieving logs")
 		return
 	}
 
+	// Display logs
 	_, err = io.Copy(os.Stdout, logStream)
 	if err != nil && err != io.EOF {
 		fmt.Println("ERR:", err)
 		return
 	}
 
+	// wait
 	time.Sleep(300 * time.Millisecond)
 
-	cData.Logs(jobID, lastLog)
+	// Display new logs
+	cData.Logs(jobID, start)
 }
 
 // Load and init config. Return false on error
