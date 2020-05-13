@@ -58,27 +58,31 @@ var (
 	loginCmd    = app.Command("login", "Login into an existing account")
 	registerCmd = app.Command("register", "Create a new account")
 
-	jobs = app.Command("jobs", "List active jobs")
+	jobs = app.Command("jobs", "List active jobs").Alias("js")
 
 	// Job commands
 	job = app.Command("job", "Job actions")
 
 	// New jobs
-	newJobCmd = job.Command("create", "Create a new job")
+	newJobCmd = job.Command("create", "Create a new job").Alias("c")
 
-	jobUploadTo = app.Flag("uploadTo", "Upload compiled file").HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
+	jobUploadTo = app.Flag("uploadTo", "Upload compiled file").Short('u').HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
 
 	// -- New AUR job
 	aurBuild        = newJobCmd.Command("aurbuild", "Build an AUR package")
 	aurbuildPackage = aurBuild.Arg("Package", "The AUR package to build").Required().String()
 
 	// Cancel job
-	jobCancelCmd = job.Command("cancel", "Cancel a job")
+	jobCancelCmd = job.Command("cancel", "Cancel a job").Alias("stop").Alias("rm")
 	jobCancelID  = jobCancelCmd.Arg("JobID", "ID of job to cancel").Required().Uint()
 
 	// Job logs
-	jobLogsCmd = job.Command("logs", "View logs of job")
+	jobLogsCmd = job.Command("logs", "View logs of job").Alias("l").Alias("log")
 	jobLogsID  = jobLogsCmd.Arg("JobID", "ID of job to retrieve the logs from").Required().Uint()
+
+	// logs
+	logsCmd = app.Command("logs", "View logs of job").Alias("l").Alias("log")
+	logsID  = logsCmd.Arg("JobID", "ID of job to retrieve the logs from").Required().Uint()
 )
 
 var (

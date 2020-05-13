@@ -31,5 +31,10 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 		// Get logs starting 20 sec ago
 		start := time.Unix(time.Now().Unix()-20, 0)
 		commandData.Logs(*jobLogsID, start)
+
+	case logsCmd.FullCommand():
+		// Get logs starting 20 sec ago
+		start := time.Unix(time.Now().Unix()-20, 0)
+		commandData.Logs(*logsID, start)
 	}
 }
