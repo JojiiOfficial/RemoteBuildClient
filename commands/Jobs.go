@@ -136,6 +136,11 @@ func (cData *CommandData) Logs(jobID uint, since time.Time, first bool) {
 		return
 	}
 
+	// Server said no more logs
+	if reqTime == -1 {
+		return
+	}
+
 	// wait
 	time.Sleep(300 * time.Millisecond)
 
