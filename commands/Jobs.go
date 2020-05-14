@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strconv"
+	"strings"
 	"time"
 
 	dmConfig "github.com/DataManager-Go/libdatamanager/config"
@@ -108,17 +110,27 @@ func (cData *CommandData) CreateAURJob(pkg, sUploadType string) {
 }
 
 // Logs of job
-func (cData *CommandData) Logs(jobID uint, since time.Time) {
-	start := time.Now()
-
-	logStream, err := cData.Librb.Logs(jobID, since)
+func (cData *CommandData) Logs(jobID uint, since time.Time, first bool) {
+	resp, err := cData.Librb.Logs(jobID, since)
 	if err != nil {
+		// If job exits while retrieving logs
+		if !first && strings.Contains(strings.ToLower(err.Error()), "job not found") {
+			return
+		}
+
 		printResponseError(err, "retrieving logs")
 		return
 	}
 
+	// Parse response time
+	reqTime, err := strconv.ParseInt(resp.Message, 10, 64)
+	if err != nil {
+		printError(err, "parsing response")
+		return
+	}
+
 	// Display logs
-	_, err = io.Copy(os.Stdout, logStream)
+	_, err = io.Copy(os.Stdout, resp.Response.Body)
 	if err != nil && err != io.EOF {
 		fmt.Println("ERR:", err)
 		return
@@ -128,7 +140,7 @@ func (cData *CommandData) Logs(jobID uint, since time.Time) {
 	time.Sleep(300 * time.Millisecond)
 
 	// Display new logs
-	cData.Logs(jobID, start)
+	cData.Logs(jobID, time.Unix(reqTime, 0), false)
 }
 
 // Load and init config. Return false on error
