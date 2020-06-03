@@ -22,7 +22,7 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 		commandData.ListJobs()
 
 	case aurBuild.FullCommand():
-		commandData.CreateAURJob(*aurbuildPackage, *jobUploadTo)
+		commandData.CreateAURJob(*aurbuildPackage, *jobUploadTo, *jobDisableCcache)
 
 	case jobCancelCmd.FullCommand():
 		commandData.CancelJob(*jobCancelID)
@@ -36,5 +36,12 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 		// Get logs starting 20 sec ago
 		start := time.Unix(time.Now().Unix()-20, 0)
 		commandData.Logs(*logsID, start, true)
+
+	case ccacheClearCmd.FullCommand():
+		commandData.ClearCcache()
+
+	case ccacheInfoCmd.FullCommand():
+		commandData.QueryCcache()
 	}
+
 }

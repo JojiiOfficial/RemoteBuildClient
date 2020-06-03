@@ -66,7 +66,8 @@ var (
 	// New jobs
 	newJobCmd = job.Command("create", "Create a new job").Alias("c")
 
-	jobUploadTo = app.Flag("uploadTo", "Upload compiled file").Short('u').HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
+	jobUploadTo      = app.Flag("uploadTo", "Upload compiled file").Short('u').HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
+	jobDisableCcache = app.Flag("disable-ccache", "Don't use ccache to build the specified package").Bool()
 
 	// -- New AUR job
 	aurBuild        = newJobCmd.Command("aurbuild", "Build an AUR package")
@@ -83,6 +84,15 @@ var (
 	// logs
 	logsCmd = app.Command("logs", "View logs of job").Alias("l").Alias("log")
 	logsID  = logsCmd.Arg("JobID", "ID of job to retrieve the logs from").Required().Uint()
+
+	// Ccache
+	ccacheCmd = app.Command("ccache", "Ccache commands").Alias("cc").Alias("cache").Alias("c")
+
+	// clear
+	ccacheClearCmd = ccacheCmd.Command("clear", "Clear ccache on server").Alias("c")
+
+	// getinfo
+	ccacheInfoCmd = ccacheCmd.Command("stats", "Clear ccache on server").Alias("i").Alias("query").Alias("q").Alias("s")
 )
 
 var (

@@ -73,14 +73,21 @@ func (cData *CommandData) CancelJob(jobID uint) {
 }
 
 // CreateAURJob create an aur build job
-func (cData *CommandData) CreateAURJob(pkg, sUploadType string) {
+func (cData *CommandData) CreateAURJob(pkg, sUploadType string, disableCcache bool) {
 	uploadtype := librb.ParseUploadType(sUploadType)
 
 	if uploadtype == librb.NoUploadType {
 		fmt.Println("Warning: not uploading")
 	}
 
+	// create aurbuild
 	aurBuild := cData.Librb.NewAURBuild(pkg)
+
+	// Disable ccache if desired
+	if disableCcache {
+		aurBuild.WithoutCcache()
+	}
+
 	if uploadtype == librb.DataManagerUploadType {
 		conf, err := initDMConfig()
 		if err != nil {
