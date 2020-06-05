@@ -24,6 +24,10 @@ github.com/JojiiOfficial/LibRemotebuild v0.0.9 h1:ea89crmSqQYlL2HrRpQnU2+y7Nhlbg
 github.com/JojiiOfficial/LibRemotebuild v0.0.9/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild v0.1.1 h1:S2Mk22tt60wtJccPy4jDJ2wjUgRe+7rMQtbGWuJUbFg=
 github.com/JojiiOfficial/LibRemotebuild v0.1.1/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
+github.com/JojiiOfficial/LibRemotebuild v0.1.2 h1:cNdYwhBAOky8I7ddwRiLGxOBjOwsvCmYCeO8eoFZCS0=
+github.com/JojiiOfficial/LibRemotebuild v0.1.2/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
+github.com/JojiiOfficial/LibRemotebuild v0.1.3 h1:NQZKsrXLZtkD6WpdzBsSYXkoHsveLSFzgBXnnqLHxwA=
+github.com/JojiiOfficial/LibRemotebuild v0.1.3/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512212457-3bff7ed5eb32 h1:KERkssPvY6PIRjZw7Abv5mkhDXeRixBgCoSboBtiMrA=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512212457-3bff7ed5eb32/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200512223431-08b89c7682ae h1:EGcuJbDRaM9RcdrDzP88VhiQbZdC7rJPuBTSA8nVfLQ=
@@ -34,6 +38,12 @@ github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200513211701-7e3585c240b
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200513211701-7e3585c240b1/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200514191053-f0838694fc86 h1:zyCosV4mNSKunl9YQkG9Av6xqU+7/PdW+CbOBeLSM1s=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200514191053-f0838694fc86/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200603154914-1a381582390b h1:2W4rFHx9p4fv/qufFgCWMPPHsmIv83ZDkYVYm8tLODg=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200603154914-1a381582390b/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200605102031-cd74b612b068 h1:nE1s0AACxCcMoAJudcMElbiXCTs36ZYYJ7eoMS0HOwc=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200605102031-cd74b612b068/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200605110928-8af692cac39b h1:ZknX2Gjt/OQHILRzZ68ehm9atENEVTEuE0dgDEfwf/A=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200605110928-8af692cac39b/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28 h1:nYoIExG+Z/gSLS9Jbpu6lnrh+m6e9gTxQfGhanTsExE=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28/go.mod h1:j1kHFoYWAbLRPE5nyAAtODwUc0xwd2+ifPZ3uCAgv/g=
 github.com/JojiiOfficial/gaw v1.2.0/go.mod h1:Y0hrpN0iX0L5bBf/8+kIER7R/m4GTNuKkifXisMG4S4=
@@ -115,6 +125,8 @@ golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37 h1:cg5LA/zNPRzIXIWSCxQW10
 golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20200602180216-279210d13fed h1:g4KENRiCMEx58Q7/ecwfT0N2o8z35Fnbsjig/Alf2T4=
 golang.org/x/crypto v0.0.0-20200602180216-279210d13fed/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
+golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9 h1:vEg9joUBmeBcK9iSJftGNf3coIG4HqZElCPehJsfAYM=
+golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/net v0.0.0-20180724234803-3673e40ba225/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=

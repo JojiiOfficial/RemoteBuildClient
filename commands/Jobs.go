@@ -103,7 +103,7 @@ func (cData *CommandData) CreateAURJob(pkg, sUploadType string, disableCcache bo
 		}
 
 		// Use Dmanager data
-		aurBuild.WithDmanager(conf.User.Username, base64.RawStdEncoding.EncodeToString([]byte(token)), conf.Server.URL)
+		aurBuild.WithDmanager(conf.User.Username, base64.RawStdEncoding.EncodeToString([]byte(token)), conf.Server.URL, cData.Config.GetNamspace(librb.JobAUR))
 	}
 
 	// Create job
