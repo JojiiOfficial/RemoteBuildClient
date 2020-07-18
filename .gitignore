@@ -24,3 +24,4 @@ data/
 test
 input
 compileAll.sh
+rbuild
