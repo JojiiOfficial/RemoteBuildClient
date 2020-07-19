@@ -9,8 +9,8 @@ github.com/JojiiOfficial/LibRemotebuild v0.0.3 h1:MdXvqIlVcdXCcBf/XDbPxvhCF+Wwur
 github.com/JojiiOfficial/LibRemotebuild v0.0.3/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild v0.1.6 h1:r3t6W/r7/OIbKHH79rzbdwEbneL+5a2C20LKrw61es4=
 github.com/JojiiOfficial/LibRemotebuild v0.1.6/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
-github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200618112923-1e57c31b8cc3 h1:xLzCvZ9T7NYWD9605d9y/GCSBi4cLVRNKArTVz+pzlA=
-github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200618112923-1e57c31b8cc3/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200719190817-656fb15fe37d h1:u+9737TTrBGgRSJFS+yMym1+LdVt+eWK7kLH3kzXCuU=
+github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200719190817-656fb15fe37d/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28 h1:nYoIExG+Z/gSLS9Jbpu6lnrh+m6e9gTxQfGhanTsExE=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28/go.mod h1:j1kHFoYWAbLRPE5nyAAtODwUc0xwd2+ifPZ3uCAgv/g=
 github.com/JojiiOfficial/gaw v1.2.1 h1:zwVLf5TQrXQF+pwI+/sVsfxTxmAZbZ5BjVT/nKxb2Ck=

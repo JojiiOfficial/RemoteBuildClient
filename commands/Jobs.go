@@ -74,6 +74,9 @@ func (cData *CommandData) CancelJob(jobID uint) {
 
 // CreateAURJob create an aur build job
 func (cData *CommandData) CreateAURJob(pkg, sUploadType string, disableCcache bool) {
+	if len(sUploadType) == 0 && len(cData.Config.DefaultUploadTo) > 0 {
+		sUploadType = cData.Config.DefaultUploadTo
+	}
 	uploadtype := librb.ParseUploadType(sUploadType)
 
 	if uploadtype == librb.NoUploadType {

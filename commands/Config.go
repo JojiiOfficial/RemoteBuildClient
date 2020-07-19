@@ -47,7 +47,6 @@ func ConfigView(cData *CommandData, sessionBase64 bool) {
 			return
 		}
 
-		// Print output
 		fmt.Println(string(b))
 	}
 }

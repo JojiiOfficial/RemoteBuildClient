@@ -6,7 +6,7 @@ require (
 	github.com/DataManager-Go/libdatamanager v1.3.8 // indirect
 	github.com/DataManager-Go/libdatamanager/config v0.0.0-20200717181208-26ce39a85e00
 	github.com/JojiiOfficial/LibRemotebuild v0.1.6
-	github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200618112923-1e57c31b8cc3
+	github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200719190817-656fb15fe37d
 	github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28
 	github.com/JojiiOfficial/gaw v1.2.8
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
