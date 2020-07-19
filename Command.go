@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 
+	libremotebuild "github.com/JojiiOfficial/LibRemotebuild"
 	"github.com/JojiiOfficial/RemoteBuildClient/commands"
 )
 
@@ -27,6 +28,12 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 	case jobCancelCmd.FullCommand():
 		commandData.CancelJob(*jobCancelID)
 
+	case jobPauseCmd.FullCommand():
+		commandData.SetJobState(*jobPauseID, libremotebuild.JobPaused)
+
+	case jobResumeCmd.FullCommand():
+		commandData.SetJobState(*jobResumeID, libremotebuild.JobRunning)
+
 	case jobLogsCmd.FullCommand():
 		// Get logs starting 20 sec ago
 		start := time.Unix(time.Now().Unix()-20, 0)
@@ -42,6 +49,7 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 
 	case ccacheInfoCmd.FullCommand():
 		commandData.QueryCcache()
+
 	}
 
 }

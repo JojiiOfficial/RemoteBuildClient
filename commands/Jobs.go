@@ -69,7 +69,7 @@ func (cData *CommandData) CancelJob(jobID uint) {
 		return
 	}
 
-	printSuccess("%s %d", "cancelling job", jobID)
+	printSuccess("%s %d", "cancelled job", jobID)
 }
 
 // CreateAURJob create an aur build job
@@ -114,6 +114,14 @@ func (cData *CommandData) CreateAURJob(pkg, sUploadType string, disableCcache bo
 	}
 
 	printSuccess("created job with ID: %d at Pos %d", resp.ID, resp.Position)
+}
+
+// SetJobState to paused or running
+func (cData *CommandData) SetJobState(jobID uint, state librb.JobState) {
+	err := cData.Librb.SetJobState(jobID, state)
+	if err != nil {
+		printResponseError(err, "Setting state")
+	}
 }
 
 // Logs of job

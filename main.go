@@ -61,7 +61,7 @@ var (
 	jobs = app.Command("jobs", "List active jobs").Alias("js")
 
 	// Job commands
-	job = app.Command("job", "Job actions")
+	job = app.Command("job", "Job actions").Alias("j")
 
 	// New jobs
 	newJobCmd = job.Command("create", "Create a new job").Alias("c")
@@ -84,6 +84,14 @@ var (
 	// logs
 	logsCmd = app.Command("logs", "View logs of job").Alias("l").Alias("log")
 	logsID  = logsCmd.Arg("JobID", "ID of job to retrieve the logs from").Required().Uint()
+
+	// Pause
+	jobPauseCmd = job.Command("pause", "Pause a job")
+	jobPauseID  = jobPauseCmd.Arg("JobID", "ID of job to pause").Required().Uint()
+
+	// Resume
+	jobResumeCmd = job.Command("resume", "Resume a job")
+	jobResumeID  = jobResumeCmd.Arg("JobID", "ID of job to resume").Required().Uint()
 
 	// Ccache
 	ccacheCmd = app.Command("ccache", "Ccache commands").Alias("cc").Alias("cache").Alias("c")
