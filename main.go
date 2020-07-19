@@ -58,7 +58,8 @@ var (
 	loginCmd    = app.Command("login", "Login into an existing account")
 	registerCmd = app.Command("register", "Create a new account")
 
-	jobs = app.Command("jobs", "List active jobs").Alias("js")
+	jobs  = app.Command("jobs", "List active jobs").Alias("js")
+	jobsn = jobs.Flag("limit", "Limit the jobs to display").Short('n').Int()
 
 	// Job commands
 	job = app.Command("job", "Job actions").Alias("j")

@@ -20,7 +20,7 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 		commandData.RegisterCommand()
 
 	case jobs.FullCommand():
-		commandData.ListJobs()
+		commandData.ListJobs(*jobsn)
 
 	case aurBuild.FullCommand():
 		commandData.CreateAURJob(*aurbuildPackage, *jobUploadTo, *jobDisableCcache)

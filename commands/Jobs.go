@@ -17,8 +17,8 @@ import (
 )
 
 // ListJobs list active jobs
-func (cData *CommandData) ListJobs() {
-	jobs, err := cData.Librb.ListJobs()
+func (cData *CommandData) ListJobs(limit int) {
+	jobs, err := cData.Librb.ListJobs(limit)
 	if err != nil {
 		printResponseError(err, "retrieving job list")
 		return
