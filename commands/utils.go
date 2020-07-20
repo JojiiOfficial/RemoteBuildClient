@@ -18,6 +18,7 @@ import (
 	"syscall"
 
 	libdm "github.com/JojiiOfficial/LibRemotebuild"
+	libremotebuild "github.com/JojiiOfficial/LibRemotebuild"
 	"github.com/JojiiOfficial/gaw"
 	"github.com/fatih/color"
 	"golang.org/x/crypto/ssh/terminal"
@@ -256,4 +257,14 @@ func nameFromURL(u *url.URL) string {
 		name = strings.ReplaceAll(name, string(filepath.Separator), "-")
 	}
 	return name
+}
+
+func hasJobWithPos(jobs []libremotebuild.JobInfo) bool {
+	for i := range jobs {
+		if jobs[i].Position > 0 {
+			return true
+		}
+	}
+
+	return false
 }

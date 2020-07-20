@@ -36,7 +36,14 @@ func (cData *CommandData) ListJobs(limit int) {
 
 	// Build header
 	headingColor := color.New(color.FgHiGreen, color.Underline, color.Bold)
-	header := []interface{}{headingColor.Sprint("ID"), headingColor.Sprint("Info"), headingColor.Sprint("Pos"), headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status")}
+	header := []interface{}{headingColor.Sprint("ID"), headingColor.Sprint("Info")}
+	var jobWithPos bool
+	if hasJobWithPos(jobs.Jobs) {
+		header = append(header, headingColor.Sprint("Pos"))
+		jobWithPos = true
+	}
+	header = append(header, []interface{}{headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status")}...)
+
 	table.AddRow(header...)
 
 	// Fill table with data
@@ -44,10 +51,16 @@ func (cData *CommandData) ListJobs(limit int) {
 		rowitems := []interface{}{
 			job.ID,
 			job.Info,
-			job.Position,
+		}
+
+		if jobWithPos {
+			rowitems = append(rowitems, job.Position)
+		}
+
+		rowitems = append(rowitems, []interface{}{
 			job.BuildType,
 			job.UploadType,
-		}
+		}...)
 
 		if job.Status == librb.JobRunning {
 			rowitems = append(rowitems, "Started "+humanTime.Difference(time.Now(), job.RunningSince))
