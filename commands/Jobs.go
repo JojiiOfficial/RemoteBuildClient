@@ -12,7 +12,6 @@ import (
 	dmConfig "github.com/DataManager-Go/libdatamanager/config"
 	librb "github.com/JojiiOfficial/LibRemotebuild"
 	"github.com/fatih/color"
-	humanTime "github.com/sbani/go-humanizer/time"
 	clitable "gopkg.in/benweidig/cli-table.v2"
 )
 
@@ -42,7 +41,7 @@ func (cData *CommandData) ListJobs(limit int) {
 		header = append(header, headingColor.Sprint("Pos"))
 		jobWithPos = true
 	}
-	header = append(header, []interface{}{headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status")}...)
+	header = append(header, []interface{}{headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status"), headingColor.Sprint("Duration")}...)
 
 	table.AddRow(header...)
 
@@ -54,7 +53,11 @@ func (cData *CommandData) ListJobs(limit int) {
 		}
 
 		if jobWithPos {
-			rowitems = append(rowitems, job.Position)
+			if job.Position > 0 {
+				rowitems = append(rowitems, job.Position)
+			} else {
+				rowitems = append(rowitems, "-")
+			}
 		}
 
 		rowitems = append(rowitems, []interface{}{
@@ -63,9 +66,15 @@ func (cData *CommandData) ListJobs(limit int) {
 		}...)
 
 		if job.Status == librb.JobRunning {
-			rowitems = append(rowitems, "Started "+humanTime.Difference(time.Now(), job.RunningSince))
+			rowitems = append(rowitems, "Running")
+			rowitems = append(rowitems, time.Since(job.RunningSince))
 		} else {
 			rowitems = append(rowitems, job.Status)
+			if job.Duration.Seconds() > 0 {
+				rowitems = append(rowitems, job.Duration.String())
+			} else {
+				rowitems = append(rowitems, "-")
+			}
 		}
 
 		table.AddRow(rowitems...)
