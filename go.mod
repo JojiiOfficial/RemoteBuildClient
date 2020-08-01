@@ -6,7 +6,7 @@ require (
 	github.com/DataManager-Go/libdatamanager v1.3.8 // indirect
 	github.com/DataManager-Go/libdatamanager/config v0.0.0-20200717181208-26ce39a85e00
 	github.com/JojiiOfficial/LibRemotebuild v0.1.8
-	github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200719194342-a1415068815f
+	github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200720164658-323c1e7631fd
 	github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28
 	github.com/JojiiOfficial/gaw v1.2.8
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
@@ -17,7 +17,8 @@ require (
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect
 	github.com/zalando/go-keyring v0.1.0
-	golang.org/x/crypto v0.0.0-20200709230013-948cd5f35899
+	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
+	golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/benweidig/cli-table.v2 v2.0.0-20180519085552-8b9fa48fb374
 )
