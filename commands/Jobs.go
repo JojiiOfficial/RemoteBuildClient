@@ -35,15 +35,18 @@ func (cData *CommandData) ListJobs(limit int) {
 
 	// Build header
 	headingColor := color.New(color.FgHiGreen, color.Underline, color.Bold)
-	header := []interface{}{headingColor.Sprint("ID"), headingColor.Sprint("Info")}
 	var jobWithPos bool
-	if hasJobWithPos(jobs.Jobs) {
-		header = append(header, headingColor.Sprint("Pos"))
-		jobWithPos = true
-	}
-	header = append(header, []interface{}{headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status"), headingColor.Sprint("Duration")}...)
 
-	table.AddRow(header...)
+	if !cData.HideTitel {
+		header := []interface{}{headingColor.Sprint("ID"), headingColor.Sprint("Info")}
+		if hasJobWithPos(jobs.Jobs) {
+			header = append(header, headingColor.Sprint("Pos"))
+			jobWithPos = true
+		}
+		header = append(header, []interface{}{headingColor.Sprint("Job Type"), headingColor.Sprint("Upload Type"), headingColor.Sprint("Status"), headingColor.Sprint("Duration")}...)
+
+		table.AddRow(header...)
+	}
 
 	// Fill table with data
 	for _, job := range jobs.Jobs {

@@ -16,6 +16,7 @@ type CommandData struct {
 
 	NoRedaction, OutputJSON bool
 	Yes, Force, Quiet       bool
+	HideTitel               bool
 }
 
 // Init init CommandData

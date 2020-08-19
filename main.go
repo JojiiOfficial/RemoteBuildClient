@@ -41,6 +41,7 @@ var (
 	// Global flags
 	appYes     = app.Flag("yes", "Skip confirmations").Short('y').Bool()
 	appCfgFile = app.Flag("config", "the configuration file for the app").Envar(getEnVar(EnVarConfigFile)).Short('c').String()
+	appNoTitle = app.Flag("no-title", "Don't show table titles").Short('t').Bool()
 
 	// File related flags
 	appForce = app.Flag("force", "Forces an action").Short('f').Bool()

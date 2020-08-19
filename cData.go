@@ -8,10 +8,11 @@ import (
 func buildCData(parsed string, appTrimName int) *commands.CommandData {
 	// Command data
 	commandData := commands.CommandData{
-		Command: parsed,
-		Config:  config,
-		Yes:     *appYes,
-		Force:   *appForce,
+		Command:   parsed,
+		Config:    config,
+		Yes:       *appYes,
+		Force:     *appForce,
+		HideTitel: *appNoTitle,
 	}
 
 	// Init cdata
