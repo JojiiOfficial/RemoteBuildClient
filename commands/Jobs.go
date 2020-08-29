@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
@@ -85,6 +86,69 @@ func (cData *CommandData) ListJobs(limit int) {
 
 	// Print table
 	fmt.Println(table)
+}
+
+// JobInfo infos about a single job
+func (cData *CommandData) JobInfo(jobID uint) {
+	infoChan := make(chan librb.JobInfo, 1)
+	logChan := make(chan string, 1)
+	exitChan := make(chan struct{}, 1)
+
+	go func() {
+		info, err := cData.Librb.JobInfo(jobID)
+		if err != nil {
+			printResponseError(err, "retrieving infos")
+			exitChan <- struct{}{}
+		}
+		infoChan <- *info
+	}()
+
+	go func() {
+		logs, err := cData.Librb.Logs(jobID, time.Unix(time.Now().Unix()-30, 0))
+		if err != nil {
+			logChan <- ""
+			return
+		}
+
+		out, err := ioutil.ReadAll(logs.Response.Body)
+		if err != nil {
+			logChan <- ""
+			return
+		}
+
+		logChan <- strings.TrimSpace(string(out))
+	}()
+
+	var info librb.JobInfo
+	var logtext string
+	select {
+	case info = <-infoChan:
+		logtext = <-logChan
+	case <-exitChan:
+		return
+	}
+
+	ItemColor := color.New(color.FgHiGreen, color.Bold).SprintFunc()
+
+	// Create table
+	table := clitable.New()
+	table.ColSeparator = " "
+	table.Padding = 2
+
+	table.AddRow(ItemColor("ID:"), info.ID)
+	table.AddRow(ItemColor("Info"), info.Info)
+	table.AddRow(ItemColor("Type"), info.BuildType)
+	table.AddRow(ItemColor("Upload"), info.UploadType)
+	table.AddRow(ItemColor("Status"), info.Status.String())
+	table.AddRow(ItemColor("Duration"), info.Duration)
+
+	fmt.Print(table.String())
+	if len(logtext) > 0 {
+		fmt.Println(ItemColor("Logs:"))
+		fmt.Println()
+		fmt.Print(logtext)
+	}
+	fmt.Println()
 }
 
 // CancelJob cancel a job

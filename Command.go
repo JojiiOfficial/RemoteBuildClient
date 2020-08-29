@@ -50,6 +50,9 @@ func runCommand(parsed string, commandData *commands.CommandData) {
 	case ccacheInfoCmd.FullCommand():
 		commandData.QueryCcache()
 
+	case jobInfo.FullCommand():
+		commandData.JobInfo(*jobInfoID)
+
 	}
 
 }

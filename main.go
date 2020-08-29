@@ -65,6 +65,9 @@ var (
 	// Job commands
 	job = app.Command("job", "Job actions").Alias("j")
 
+	jobInfo   = job.Command("info", "Infos about a job").Alias("i")
+	jobInfoID = jobInfo.Arg("id", "JobID").Required().Uint()
+
 	// New jobs
 	newJobCmd = job.Command("create", "Create a new job").Alias("c")
 
