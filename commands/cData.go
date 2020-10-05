@@ -2,6 +2,7 @@ package commands
 
 import (
 	"fmt"
+	"os"
 
 	librb "github.com/JojiiOfficial/LibRemotebuild"
 	dmConfig "github.com/JojiiOfficial/LibRemotebuild/config"
@@ -40,4 +41,8 @@ func (cData *CommandData) Init() bool {
 
 	// return success
 	return true
+}
+
+func (cData *CommandData) upload_given() bool {
+	return gaw.IsInStringArray("--uploadTo", os.Args)
 }

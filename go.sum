@@ -7,8 +7,8 @@ github.com/DataManager-Go/libdatamanager/config v0.0.0-20200905133220-f4e6c1616c
 github.com/DataManager-Go/libdatamanager/config v0.0.0-20200905133220-f4e6c1616cfa/go.mod h1:YHPA+ryhCc4xY130Az+ScF9zkRNGdHuz09eZXiULhrw=
 github.com/JojiiOfficial/LibRemotebuild v0.0.3 h1:MdXvqIlVcdXCcBf/XDbPxvhCF+Wwurijr4J7kNeNjI0=
 github.com/JojiiOfficial/LibRemotebuild v0.0.3/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
-github.com/JojiiOfficial/LibRemotebuild v0.1.9 h1:+hOpqEYMP3e5flugK0CkTBq6d2nSxGguHWOFbohD5PI=
-github.com/JojiiOfficial/LibRemotebuild v0.1.9/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
+github.com/JojiiOfficial/LibRemotebuild v0.1.10 h1:o64x4PrNq59cLrXNIwgaogzHnZdbCISw0gztcRcpoAc=
+github.com/JojiiOfficial/LibRemotebuild v0.1.10/go.mod h1:NS5D8NlALafEHK8LmRctE22sM4JjOlZyCwoXA//P2nU=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200829130842-953984aae89e h1:1fmDGreiPBqeLKRv+iQdNoRnimRT5lnQyBVC9WQWD3s=
 github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200829130842-953984aae89e/go.mod h1:lxGR/6KclpgZK45zYp8Fez3LbhrWIOI3ZYM0jFAkYFo=
 github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28 h1:nYoIExG+Z/gSLS9Jbpu6lnrh+m6e9gTxQfGhanTsExE=

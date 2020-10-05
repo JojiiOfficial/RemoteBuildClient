@@ -71,7 +71,7 @@ var (
 	// New jobs
 	newJobCmd = job.Command("create", "Create a new job").Alias("c")
 
-	jobUploadTo      = app.Flag("uploadTo", "Upload compiled file").Short('u').HintOptions([]string{librb.DataManagerUploadType.String()}...).String()
+	jobUploadTo      = app.Flag("uploadTo", "Upload compiled file").Short('u').HintOptions([]string{librb.DataManagerUploadType.String(), librb.LocalStorage.String()}...).String()
 	jobDisableCcache = app.Flag("disable-ccache", "Don't use ccache to build the specified package").Bool()
 
 	// -- New AUR job
