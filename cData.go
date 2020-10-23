@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/JojiiOfficial/RemoteBuildClient/commands"
+	"github.com/RemoteBuild/RemoteBuildClient/commands"
 )
 
 // Generates a commands.Commanddata object based on the cli parameter
