@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/JojiiOfficial/gaw"
 	librb "github.com/RemoteBuild/LibRemotebuild"
 	dmConfig "github.com/RemoteBuild/LibRemotebuild/config"
-	"github.com/JojiiOfficial/gaw"
 
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
