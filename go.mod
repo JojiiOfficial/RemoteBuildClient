@@ -1,14 +1,14 @@
-module github.com/JojiiOfficial/RemoteBuildClient
+module github.com/RemoteBuild/RemoteBuildClient
 
 go 1.14
 
 require (
 	github.com/DataManager-Go/libdatamanager v1.3.8 // indirect
 	github.com/DataManager-Go/libdatamanager/config v0.0.0-20200905133220-f4e6c1616cfa
-	github.com/JojiiOfficial/LibRemotebuild v0.1.10
-	github.com/JojiiOfficial/LibRemotebuild/config v0.0.0-20200829130842-953984aae89e
 	github.com/JojiiOfficial/configService v0.0.0-20200219132202-6e71512e2e28
 	github.com/JojiiOfficial/gaw v1.2.8
+	github.com/RemoteBuild/LibRemotebuild v0.1.10
+	github.com/RemoteBuild/LibRemotebuild/config v0.0.0-20200829130842-953984aae89e
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
 	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
