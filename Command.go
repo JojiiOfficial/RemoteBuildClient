@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	libremotebuild "github.com/JojiiOfficial/LibRemotebuild"
-	"github.com/JojiiOfficial/RemoteBuildClient/commands"
+	libremotebuild "github.com/RemoteBuild/LibRemotebuild"
+	"github.com/RemoteBuild/RemoteBuildClient/commands"
 )
 
 func runCommand(parsed string, commandData *commands.CommandData) {

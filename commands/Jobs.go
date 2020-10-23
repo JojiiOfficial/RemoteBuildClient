@@ -11,7 +11,7 @@ import (
 	"time"
 
 	dmConfig "github.com/DataManager-Go/libdatamanager/config"
-	librb "github.com/JojiiOfficial/LibRemotebuild"
+	librb "github.com/RemoteBuild/LibRemotebuild"
 	"github.com/fatih/color"
 	clitable "gopkg.in/benweidig/cli-table.v2"
 )

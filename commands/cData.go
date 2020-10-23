@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	librb "github.com/JojiiOfficial/LibRemotebuild"
-	dmConfig "github.com/JojiiOfficial/LibRemotebuild/config"
+	librb "github.com/RemoteBuild/LibRemotebuild"
+	dmConfig "github.com/RemoteBuild/LibRemotebuild/config"
 	"github.com/JojiiOfficial/gaw"
 )
 

@@ -1,5 +1,5 @@
 # RemoteBuild - Client
-This is the client for the [RemoteBuild system](https://github.com/JojiiOfficial/Remotebuild). You can use it to create/control jobs running on the server.<br>
+This is the client for the [RemoteBuild system](https://github.com/RemoteBuild/Remotebuild). You can use it to create/control jobs running on the server.<br>
 If you have no idea what this is, read the README from the repository I just linked.
 
 # Install

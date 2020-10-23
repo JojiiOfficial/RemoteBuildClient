@@ -17,8 +17,8 @@ import (
 	"strings"
 	"syscall"
 
-	libdm "github.com/JojiiOfficial/LibRemotebuild"
-	libremotebuild "github.com/JojiiOfficial/LibRemotebuild"
+	libdm "github.com/RemoteBuild/LibRemotebuild"
+	libremotebuild "github.com/RemoteBuild/LibRemotebuild"
 	"github.com/JojiiOfficial/gaw"
 	"github.com/fatih/color"
 	"golang.org/x/crypto/ssh/terminal"
