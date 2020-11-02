@@ -106,6 +106,14 @@ var (
 
 	// getinfo
 	ccacheInfoCmd = ccacheCmd.Command("stats", "Clear ccache on server").Alias("i").Alias("query").Alias("q").Alias("s")
+
+	// List fies on the remote storage
+	filesCmd = app.Command("files", "List files assigned to a Job").Alias("fs")
+	filesID  = filesCmd.Arg("ID", "The JobID to view the available files from").Required().Uint()
+
+	// Download files from a job
+	DownloadCmd = app.Command("download", "Download files from a job").Alias("dl")
+	DownloadID  = DownloadCmd.Arg("ID", "The JobID to download the output files from").Required().Uint()
 )
 
 var (
