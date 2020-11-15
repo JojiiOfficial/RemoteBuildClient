@@ -17,8 +17,8 @@ require (
 	github.com/klauspost/pgzip v1.2.5 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/zalando/go-keyring v0.1.0
-	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
-	golang.org/x/sys v0.0.0-20201101102859-da207088b7d1 // indirect
+	golang.org/x/crypto v0.0.0-20201112155050-0c6587e931a9
+	golang.org/x/sys v0.0.0-20201113233024-12cec1faf1ba // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/benweidig/cli-table.v2 v2.0.0-20180519085552-8b9fa48fb374
 )
